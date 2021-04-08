@@ -1,4 +1,4 @@
-//function for time and date stamp
+//timestamp function
 
 function getTime() {
     let today = new Date();
@@ -20,9 +20,11 @@ function getTime() {
     return time;
 }
 
+
+// intro and first message
+
 const userName = prompt("Hi there! What should I call you?");
 
-// Gets the first message
 function firstBotMessage() {
     let firstMessage = `Hello, ${userName}. Nice to meet you!` + " " + getTime();
 
@@ -36,7 +38,9 @@ function firstBotMessage() {
 
 firstBotMessage();
 
-// Retrieves the response
+
+// bot response
+
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
     let botHtml = '<p class="botText"><span>' + botResponse + " " + getTime() + '</span></p>';
@@ -45,7 +49,14 @@ function getHardResponse(userText) {
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 
-//Gets the text text from the input box and processes it
+// processes user input
+
+$("#textInput").keydown(function (e) {
+    if (e.which == 13) {
+        getResponse();
+    }
+});
+
 function getResponse() {
     let userText = $("#textInput").val();
 
@@ -74,24 +85,17 @@ function sendButton() {
     getResponse();
 }
 
-// Press enter to send a message
-$("#textInput").keypress(function (e) {
-    if (e.which == 13) {
-        getResponse();
-    }
-});
-
-//Robot responses
+// bot responses
 
 function getBotResponse(input) {
 
-    input = input.toLowerCase();
+    input = input.toLowerCase().replace(/[?]/g,'');
 
     let helloResponse = ["hello", "hi", "hiya", "hey", "what's up?"];
     let goodbyeResponse = ["cya", "goodbye", "bye", "see ya", "talk later"];
-    let howAreResponse = ["how are you", "how are you?", "what's up?", "how are you doing?", "you?"];
-    let whatName = ["what is your name?", "what's your name?", "what are you called?"];
-    let tellJoke = ["tell me a joke", "joke", "tell me a joke?", "tell me a joke please", "can you tell me a joke?"];
+    let howAreResponse = ["how are you", "what's up", "how are you doing", "you"];
+    let whatName = ["what is your name", "what's your name", "what are you called"];
+    let tellJoke = ["tell me a joke", "joke", "tell me a joke please", "can you tell me a joke"];
 
     if (helloResponse.includes(input)) {
         return "Hello there!";

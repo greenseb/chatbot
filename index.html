@@ -7,16 +7,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Chat Bot</title>
 
+	<!-- CSS -->
 	<link rel="stylesheet" href="chat.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- ICONS -->
+	<script src="https://kit.fontawesome.com/f719509944.js" crossorigin="anonymous"></script>
+
+	<!-- FONTS -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<!-- header - credit given in CSS -->
+	<!-- header - credit given in chat.css -->
 
 	<h1 class="line-1 anim-typewriter">Let's chat...</h1>
+
+	<!-- robot image -->
+
+	<div class="robot-image">
+		<img src="images/inhabitants-npc-maintenance-bot.svg" alt="robot image">
+	</div>
 
 	<!-- main block -->
 
@@ -31,7 +44,7 @@
 
 				<div id="chatbox">
 					<h5 id="chat-timestamp"></h5>
-					<p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+					<p id="botStarterMessage" class="botText"><span>...</span></p>
 				</div>
 
 				<!-- user input -->
@@ -40,13 +53,12 @@
 					<div id="userInput">
 						<input id="textInput" class="input-box" type="text" name="msg"
 							placeholder="Enter message here...">
-						<p></p>
 					</div>
 
-					<!-- icons -->
+					<!-- icon -->
 
-					<div class="chat-bar-icons">
-						<i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
+					<div class="chat-bar-icon">
+						<i id="chat-icon" class="far fa-paper-plane" onclick="sendButton()"></i>
 					</div>
 				</div>
 
@@ -65,9 +77,10 @@
 
 <!-- jQuery -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- JavaScript -->
+
 <script src="chat.js"></script>
 
 </html>
