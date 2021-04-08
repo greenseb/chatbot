@@ -1,0 +1,150 @@
+/* header - based on code snippet by Geoff Graham on css-tricks.com and re-styled by me */
+
+.line-1{
+    color: white;
+    font-family: monospace;
+    position: relative;
+    top: 60px;
+    width: 100%;
+    margin: 0 auto;
+    border-right: 3px solid;
+    font-size: 3rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;    
+}
+
+.anim-typewriter{
+  animation: typewriter 3.4s steps(18) 1s 1 normal both,
+             blinkTextCursor 750ms steps(25) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 8em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255, 255, 255, 0.75);}
+  to{border-right-color: transparent;}
+}
+
+/* main page */
+
+body {
+    margin: 0 auto;
+    background: rgb(216,239,255);
+    background: linear-gradient(90deg, rgba(216,239,255,1) 0%, rgba(106,166,206,1) 35%, rgba(55,133,185,100) 100%);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+/* main content */
+
+.main-chat-block {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    margin: 100px auto;
+    overflow: auto;
+    text-align: center;
+    width: 75%;
+}
+
+/* message box */
+
+.outer-container {
+    height: 450px;
+    position: relative;
+}
+
+.chat-container {
+    bottom: 0;
+    max-height: 100%;
+    position: absolute;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.chat-bar-input-block {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(235, 235, 235);;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: 25%;
+    align-items: center;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+}
+
+.userText {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    text-align: right;
+}
+
+.userText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #5ca6fa;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin-right: 15px;
+    animation: floatup .5s forwards
+}
+
+.botText {
+    color: #000;
+    font-family: Helvetica;
+    font-size: 16px;
+    text-align: left;
+}
+
+.botText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin-left: 15px;
+    animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(20px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

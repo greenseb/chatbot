@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chat Bot</title>
+
+	<link rel="stylesheet" href="chat.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- header - credit given in CSS -->
+
+	<h1 class="line-1 anim-typewriter">Let's chat...</h1>
+
+	<!-- main block -->
+
+	<div class="main-chat-block">
+
+		<!-- message box -->
+
+		<div class="outer-container">
+			<div class="chat-container">
+
+				<!-- messages -->
+
+				<div id="chatbox">
+					<h5 id="chat-timestamp"></h5>
+					<p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+				</div>
+
+				<!-- user input -->
+
+				<div class="chat-bar-input-block">
+					<div id="userInput">
+						<input id="textInput" class="input-box" type="text" name="msg"
+							placeholder="Enter message here...">
+						<p></p>
+					</div>
+
+					<!-- icons -->
+
+					<div class="chat-bar-icons">
+						<i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
+					</div>
+				</div>
+
+				<!-- chat bar -->
+
+				<div id="chat-bar-bottom">
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+<!-- jQuery -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- JavaScript -->
+<script src="chat.js"></script>
+
+</html>
