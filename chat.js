@@ -15,10 +15,11 @@ function getTime() {
         minutes = "0" + minutes;
     }
 
-    let time = hours + ":" + minutes + " " + dates + "-" + month + "-" + year;
+    let time = hours + ":" + minutes + " " + dates + "/" + month + "/" + year;
     time = time.fontsize(1);
     return time;
 }
+
 
 
 // intro and first message
@@ -33,10 +34,10 @@ function firstBotMessage() {
     let time = getTime();
 
     $("#chat-timestamp").append(time);
-    document.getElementById("userInput").scrollIntoView(false);
 }
 
 firstBotMessage();
+
 
 
 // bot response
@@ -48,6 +49,8 @@ function getHardResponse(userText) {
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
+
+
 
 // processes user input
 
@@ -69,10 +72,12 @@ function getResponse() {
     setTimeout(() => {
         getHardResponse(userText);
     }, 1000)
-
 }
 
+
+
 // Handles sending text via button clicks
+
 function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
 
@@ -81,20 +86,18 @@ function buttonSendText(sampleText) {
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 
-function sendButton() {
-    getResponse();
-}
+
 
 // bot responses
 
 function getBotResponse(input) {
 
-    input = input.toLowerCase().replace(/[?]/g,'');
+    input = input.toLowerCase().replace(/[?']/g, '');
 
-    let helloResponse = ["hello", "hi", "hiya", "hey", "what's up?"];
+    let helloResponse = ["hello", "hi", "hiya", "hey"];
     let goodbyeResponse = ["cya", "goodbye", "bye", "see ya", "talk later"];
-    let howAreResponse = ["how are you", "what's up", "how are you doing", "you"];
-    let whatName = ["what is your name", "what's your name", "what are you called"];
+    let howAreResponse = ["how are you", "whats up", "how are you doing", "you"];
+    let whatName = ["what is your name", "whats your name", "what are you called"];
     let tellJoke = ["tell me a joke", "joke", "tell me a joke please", "can you tell me a joke"];
 
     if (helloResponse.includes(input)) {
@@ -107,7 +110,7 @@ function getBotResponse(input) {
         return "My creator did not name me...";
     } else if (tellJoke.includes(input)) {
         return "!false (...it's funny because it's true)";
-    } else if (input === " ") {
+    } else if (input === " " || input === "") {
         return "Are you giving me the silent treatment?";
     } else {
         return `Sorry, ${userName}. I didn't understand that.`;
