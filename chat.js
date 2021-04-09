@@ -74,6 +74,9 @@ function getResponse() {
     }, 1000)
 }
 
+function sendButton(){
+    getResponse();
+}
 
 
 // Handles sending text via button clicks
