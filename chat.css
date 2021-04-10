@@ -58,7 +58,7 @@ background: linear-gradient(90deg, rgba(240,233,255,1) 0%, rgba(176,136,255,1) 3
 /* main content */
 
 .main-chat-block {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     margin: 10% auto;
     overflow: auto;

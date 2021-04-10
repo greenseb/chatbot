@@ -1,10 +1,10 @@
-//timestamp function
+// timestamp function
 
 function getTime() {
     let today = new Date();
     hours = today.getHours();
     minutes = today.getMinutes();
-    dates = today.getDate();
+    date = today.getDate();
     month = today.getMonth();
     year = today.getFullYear();
 
@@ -15,11 +15,10 @@ function getTime() {
         minutes = "0" + minutes;
     }
 
-    let time = hours + ":" + minutes + " " + dates + "/" + month + "/" + year;
+    let time = hours + ":" + minutes + " " + date + "/" + month + "/" + year;
     time = time.fontsize(1);
     return time;
 }
-
 
 
 // intro and first message
@@ -29,7 +28,7 @@ const userName = prompt("Hi there! What should I call you?");
 function firstBotMessage() {
     let firstMessage = `Hello, ${userName}. Nice to meet you!` + " " + getTime();
 
-    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
+    $("#botStarterMessage").html('<p class="botText"><span>' + firstMessage + '</span></p>');
 
     let time = getTime();
 
@@ -40,25 +39,9 @@ firstBotMessage();
 
 
 
-// bot response
-
-function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + " " + getTime() + '</span></p>';
-    $("#chatbox").append(botHtml);
-
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
-
-
-
 // processes user input
 
-$("#textInput").keydown(function (e) {
-    if (e.which == 13) {
-        getResponse();
-    }
-});
+$("#textInput").focus();
 
 function getResponse() {
     let userText = $("#textInput").val();
@@ -70,22 +53,33 @@ function getResponse() {
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
     setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
+        getBotResponse(userText);
+    }, 950)
 }
 
-function sendButton(){
+$("#textInput").keydown(function (e) {
+    if (e.which === 13) {
+        getResponse();
+    }
+});
+
+
+
+// lets user use send icon to enter message
+
+function sendButton() {
     getResponse();
 }
 
 
-// Handles sending text via button clicks
 
-function buttonSendText(sampleText) {
-    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
+// bot response
 
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
+function getBotResponse(userText) {
+    let botResponse = botResponses(userText);
+    let botHtml = '<p class="botText"><span>' + botResponse + " " + getTime() + '</span></p>';
+    $("#chatbox").append(botHtml);
+
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 
@@ -93,13 +87,13 @@ function buttonSendText(sampleText) {
 
 // bot responses
 
-function getBotResponse(input) {
+function botResponses(input) {
 
     input = input.toLowerCase().replace(/[?']/g, '');
 
     let helloResponse = ["hello", "hi", "hiya", "hey"];
     let goodbyeResponse = ["cya", "goodbye", "bye", "see ya", "talk later"];
-    let howAreResponse = ["how are you", "whats up", "how are you doing", "you"];
+    let howAreResponse = ["how are you", "whats up", "how are you doing", "you okay", "you alright"];
     let whatName = ["what is your name", "whats your name", "what are you called"];
     let tellJoke = ["tell me a joke", "joke", "tell me a joke please", "can you tell me a joke"];
 
