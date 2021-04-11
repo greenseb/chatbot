@@ -45,7 +45,6 @@ $("#textInput").focus();
 
 function getResponse() {
     let userText = $("#textInput").val();
-
     let userHtml = '<p class="userText"><span>' + userText + " " + getTime() + '</span></p>';
 
     $("#textInput").val("");
@@ -54,7 +53,7 @@ function getResponse() {
 
     setTimeout(() => {
         getBotResponse(userText);
-    }, 950)
+    }, 1000)
 }
 
 $("#textInput").keydown(function (e) {
@@ -65,7 +64,7 @@ $("#textInput").keydown(function (e) {
 
 
 
-// lets user use send icon to enter message
+// let user use send icon to enter message
 
 function sendButton() {
     getResponse();
