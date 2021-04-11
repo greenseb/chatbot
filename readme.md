@@ -4,10 +4,10 @@ I filled the gaps in my knowledge and added some flair by reading articles and w
 
 YouTube channels I watched before and during this assignment:
 
--Code Palace
--The Net Ninja
--FreeCodeCamp
--Heri Kaniugu
+-Code Palace  
+-The Net Ninja  
+-FreeCodeCamp  
+-Heri Kaniugu  
 
 All other credit is given in comments on the code itself.
 
