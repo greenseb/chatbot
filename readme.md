@@ -1,4 +1,4 @@
-This is my simple chat bot that I made with HTML, CSS, JavaScript and jQuery. I already had some knowledge of HTML and CSS, and some JavaScript/jQuery as a result of taking Angela Yu's Web Dev course on Udemy. 
+This is my simple chat bot that I made with HTML, CSS, JavaScript and jQuery. I already had some knowledge of HTML and CSS, and a little JavaScript/jQuery as a result of taking Angela Yu's Web Dev course on Udemy. 
 
 I filled the gaps in my knowledge and added some flair by reading articles and watching some tutorials, but avoided explicitly copying code from them.
 
