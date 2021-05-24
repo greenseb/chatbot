@@ -5,7 +5,7 @@ function getTime() {
     hours = today.getHours();
     minutes = today.getMinutes();
     date = today.getDate();
-    month = today.getMonth();
+    month = today.getMonth() +1;
     year = today.getFullYear();
 
     if (hours < 10) {
